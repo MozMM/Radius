@@ -12,9 +12,9 @@ export class WelcomePage extends Component {
   render() { 
     return (
     <Container fluid='true' className='noPadding'>
-      <Card fluid='true' className='noPadding'>
-        <Card.Body id='killBorder'>
-          <Card.Img  src='https://www.holidayinnmanhattanview.com/assets/gallery/HolidayInn-ManhattanView-3.jpg' alt=''/>
+      <Card fluid='true' id='killBorder'>
+        <Card.Body className='noPadding'>
+          <Card.Img className='noPadding' src='https://www.holidayinnmanhattanview.com/assets/gallery/HolidayInn-ManhattanView-3.jpg' alt=''/>
             <Card.ImgOverlay className='noPadding'>
               <Card.Title className='marginTop text text-center'>Radius offers a look at current rental listings in NYC and their surrounding amenities. </Card.Title>
               <Card.Text className='text text-center'>Find out what's around...</Card.Text>
