@@ -14,7 +14,8 @@ without navigating to different sites. You can view a video introduction [here](
 ## Set Up
 * Get a [Realtor API key](https://rapidapi.com/apidojo/api/realtor)
 * Get a [Google Javascript API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
-* ```git clone https://github.com/2008-GH-Capstone-team-E/radius.git```
+* ```git clone https://github.com/MozMM/Radius.git```
+* Store these keys using ENV variable names: process.env.REACT_APP_REALTOR_API_KEY &  
 * Create a .gitignore file and put the above credentials in it
 * ```npm install```
 * ```npm start```
