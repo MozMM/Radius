@@ -2,7 +2,7 @@
 [Radius](https://radius-db5d1.web.app/) is a website that allow users to shop for rental properties and explore the nearby neighborhood all at one place,
 without navigating to different sites. You can view a video introduction [here](https://www.youtube.com/watch?v=Hraeg3iwS3U&feature=youtu.be).
 
-![](src/css/HomePage.png)
+<img src=src/css/HomePage.png height=600>
 
 ## Technology
 - FrontEnd: Javascript, React, Redux, Bootstrap, Google Javascript API, Realtor API
