@@ -1,12 +1,9 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { Nav, Navbar } from "react-bootstrap";
-import firebase, { auth, db } from "./firebase";
+import firebase, { auth, db } from "../config/firebase";
 
 import { gotIsLoggedIn } from '../store/user'
-import '../css/style.css'
-
-
 
 export class Header extends Component {
   constructor(props) {
@@ -28,7 +25,7 @@ export class Header extends Component {
         <Navbar collapseOnSelect expand="lg" variant="dark">
       <Navbar.Brand>
           <a href="/">
-          <img src="https://github.com/2008-GH-Capstone-team-E/radius/blob/main/public/logo_radius.png?raw=true" alt='Radius'/>
+          <img src="https://github.com/MozMM/Radius/blob/main/public/logo_radius.png?raw=true" alt='Radius'/>
           </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

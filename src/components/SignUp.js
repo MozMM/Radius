@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button, Container } from "react-bootstrap";
-import { auth, db } from "./firebase";
-import "../css/style.css";
-
+import { auth, db } from "../config/firebase";
 
 class Signup extends Component {
   constructor(props) {
