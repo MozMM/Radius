@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import mapStyle from './mapStyle'
-import SinglePropertyBox from './SinglePropertyBox'
-import {connect} from "react-redux"
-import {fetchProperties} from "../store/allProperties"
-import { fetchProperty } from '../store/singleProperty'
-import subwayPic from "../css/subwayLogo.png"
-import schoolPic from "../css/school.png";
-import parkPic from "../css/park.png"
-import groceryPic from "../css/groceries.png"
-import restaurantPic from "../css/restaurantLogo.png"
-import gasStationPic from "../css/gas-station.png"
-import gymPic from "../css/weightlift.png"
 import { Container, Row, Col } from "react-bootstrap";
-import defaultPic from "../css/Property_Image_PlaceHolder.png"
+
+import SinglePropertyBox from './SinglePropertyBox'
 import PropertyFilter from "./PropertyFilter"
 
-var get = require('lodash.get');
+import { connect } from "react-redux"
+import { fetchProperties } from "../store/allProperties"
+import { fetchProperty } from '../store/singleProperty'
+
+import mapStyle from "../config/mapStyle"
+
+import subwayPic  from "../css/images/subwayLogo.png"
+import schoolPic from "../css/images/school.png";
+import parkPic from "../css/images/park.png"
+import groceryPic from "../css/images/groceries.png"
+import restaurantPic from "../css/images/restaurantLogo.png"
+import gasStationPic from "../css/images/gas-station.png"
+import gymPic from "../css/images/weightlift.png"
+import defaultPic from "../css/images/Property_Image_PlaceHolder.png"
+
+const get = require('lodash.get');
 
 const API_KEY =`${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`;
 

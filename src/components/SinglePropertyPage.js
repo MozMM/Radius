@@ -4,7 +4,7 @@ import { fetchProperty } from '../store/singleProperty'
 import { Button, Row, Col, Container, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-var get = require('lodash.get');
+const get = require('lodash.get');
 
 //const altPropertyImage = "https://github.com/2008-GH-Capstone-team-E/radius/blob/main/public/Property_Image_PlaceHolder.png?raw=true"
 

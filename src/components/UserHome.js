@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import firebase, { auth, db } from "./firebase";
+import firebase, { auth, db } from "../config/firebase";
 import { Link } from "react-router-dom";
 import { Button, Row, Col, Container ,Card} from "react-bootstrap";
 import axios from 'axios'
-import "../css/style.css";
 
 class UserFavorites extends Component {
   constructor(props) {

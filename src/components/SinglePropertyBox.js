@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import firebase, { auth, db } from "./firebase";
-import defaultPic from "../css/Property_Image_PlaceHolder.png"
+import firebase, { auth, db } from "../config/firebase";
+import defaultPic from "../css/images/Property_Image_PlaceHolder.png"
 
-var get = require('lodash.get');
+const get = require('lodash.get');
 
 //const altPropertyImage = "https://github.com/2008-GH-Capstone-team-E/radius/blob/main/public/Property_Image_PlaceHolder.png?raw=true"
 
