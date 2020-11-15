@@ -117,53 +117,53 @@ class UserFavorites extends Component {
         //wait to resolve
         if(this.state.resolvedPromise){
           //show fav property
-          return(
+          return (
             <div>
-                <Container fluid className="favsContainer" >
-                    <Row >
-                      {properties.map(property => {
-                        return(
-                          <Col key={property.property_id}>
-                          <Card style={{width: "300px", margin:"20px "}}>
-                            <Card.Img variant="top" src={property.photos[0].href} style={{width: 300, height: 300}}/>
-                            <Card.Body>
-                              <Card.Text>
-                              <b>Address:</b>
-                              {property.address.line},
-                              {property.address.county}, NY,
-                              {property.address.postal_code}
-                              <br></br>
-                              <b>Monthly: </b>$
-                              {checkPrice(property)}
-                              <br></br>
-                              <b>Bedrooms: </b>
-                              {checkBedroom(property)}
-                              </Card.Text>
+              <Container fluid className="favsContainer" >
+                <Row>
+                  {properties.map(property => {
+                    return(
+                      <Col key={property.property_id}>
+                      <Card style={{width: "300px", margin:"20px "}}>
+                        <Card.Img variant="top" src={property.photos[0].href} style={{width: 300, height: 300}}/>
+                        <Card.Body>
+                          <Card.Text>
+                          <b>Address:</b>
+                          {property.address.line},
+                          {property.address.county}, NY,
+                          {property.address.postal_code}
+                          <br></br>
+                          <b>Monthly: </b>$
+                          {checkPrice(property)}
+                          <br></br>
+                          <b>Bedrooms: </b>
+                          {checkBedroom(property)}
+                          </Card.Text>
 
-                              <Row>
-                                <Col>
-                                <Link to={`/properties/${property.property_id}`}>
-                                <Button className="buttonSizer" variant="info">More Info</Button>
-                              </Link>
-                                </Col>
+                          <Row>
+                            <Col>
+                            <Link to={`/properties/${property.property_id}`}>
+                            <Button className="buttonSizer" variant="info">More Info</Button>
+                          </Link>
+                            </Col>
 
-                                <Col>
-                                <Button  className="buttonSizer"
-                              variant="info" size="sm"
-                              onClick={() => {this.handleRemove(property.property_id)}}>
-                              Remove
-                              </Button>
-                                </Col>
-                              </Row>
-                            </Card.Body>
-                          </Card>
-                          </Col>
-                        )
-                      })
-                      }
-                    </Row>
-                  </Container>
-                  </div>
+                            <Col>
+                            <Button  className="buttonSizer"
+                          variant="info" size="sm"
+                          onClick={() => {this.handleRemove(property.property_id)}}>
+                          Remove
+                          </Button>
+                            </Col>
+                          </Row>
+                        </Card.Body>
+                      </Card>
+                      </Col>
+                    )
+                  })
+                  }
+                </Row>
+              </Container>
+            </div>
               )
         }else{
           return(
@@ -186,43 +186,3 @@ class UserFavorites extends Component {
 
 }
 export default UserFavorites
-
-
-//alternative for using Card
-// (
-//   <Col  className="favsCol"
-//       key={property.property_id}>
-//       <img src={property.photos[0].href}
-//       alt="property photo"
-//       style={{width: 250, height: 300}}
-//       />
-//       <b>Address:</b>
-//       {property.address.line},
-//       {property.address.county}, NY,
-//       {property.address.postal_code}
-//       <br></br>
-//       <b>Monthly: </b>$
-//       {property.price?property.price:property.community.price_max}
-//       <br></br>
-//       <b>Bedrooms: </b>
-//       {property.price?property.beds:property.community.beds_max}
-//       <br></br>
-//       <Row className='marginTop'>
-//       <Col>
-//       <Link to={`/properties/${property.property_id}`}>
-//       <Button className='buttonSizer'
-//       variant="outline-info" size="sm">
-//       See More Info
-//       </Button>
-//       </Link>
-//       </Col>
-//       <Col>
-//       <Button className='buttonSizer'
-//       variant="outline-info" size="sm"
-//       onClick={() => {this.handleRemove(property.property_id)}}>
-//       Remove From Favs
-//       </Button>
-//       </Col>
-//       </Row>
-//       </Col>
-// )

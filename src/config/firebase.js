@@ -1,7 +1,6 @@
 import * as firebase from 'firebase';
 
-
-var config = {
+const config = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   databaseURL: process.env.REACT_APP_DATABASE_URL,
@@ -12,7 +11,7 @@ var config = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
-// Initialize Firebase
+//Initialize Firebase
 firebase.initializeApp(config);
 
 export const auth = firebase.auth;
