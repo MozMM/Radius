@@ -31,57 +31,50 @@ class SinglePropertyPage extends Component {
     let brokerTel;
     
     //for price
-    if(property.price){
-      price = property.price
-    }else if(property.community!==undefined){
-      price=property.community.price_max
-    }else{
-      price="unavaliable"
+    if (property.price) {
+      price = property.price;
+    } else if (property.community !== undefined) {
+      price = property.community.price_max;
+    } else {
+      price="unavaliable";
     }
 
     //for bedroom
-    if(property.price){
-      beds = property.beds
-    }else if(property.community!==undefined){
-      beds=property.community.beds_max
-    }else{
-      beds="unavaliable"
+    if (property.price) {
+      beds = property.beds;
+    } else if (property.community !== undefined) {
+      beds = property.community.beds_max;
+    } else {
+      beds = "unavaliable";
     }
 
     //for bathroom
-    if(property.price){
-      baths = property.baths
-    }else if(property.community!==undefined){
-      baths=property.community.baths_max
-    }else{
-      baths="unavaliable"
+    if (property.price) {
+      baths = property.baths;
+    } else if (property.community !== undefined) {
+      baths=property.community.baths_max;
+    } else {
+      baths="unavaliable";
     }
 
     //for contact
-    if(property.price){
-      brokerTel = property.baths
-    }else if(property.community!==undefined){
-      brokerTel=property.community.contact_number
-    }else{
-      brokerTel="unavaliable"
+    if (property.price) {
+      brokerTel = property.baths;
+    } else if (property.community !== undefined) {
+      brokerTel=property.community.contact_number;
+    } else {
+      brokerTel="unavaliable";
     }
     
-    // const price = get(property, 'floor_plans[0].price', 'unavailable')
     const brokerName = get(property, 'broker.name', 'unavailable')
-    // const brokerTel = get(property, 'broker.phone1.number', 'unavailable')
     const address = get(property, 'address.line', 'unavailable')
     const county = get(property, 'address.county', 'unavailable')
     const zip = get(property, 'address.postal_code', 'unavailable')
-    const prop_type = get(property, 'prop_type')
+    const prop_type = get(property, 'prop_type', 'unavailable')
     const yearBuilt = get(property, 'year_built', 'unavailable')
-    let description = property.description
-    if(description){
-      description=description.split("<br>").join("");
-    }
+    let description = get(property, 'description', 'unavailable')
+    description = description.split("<br>").join("")
     
-    // const beds = get(property, 'beds', 'unavailable')
-    // const baths = get(property, 'baths', 'unavailable')
-
     return (
       <div>
         { Object.keys(property).length ? 
@@ -97,7 +90,7 @@ class SinglePropertyPage extends Component {
                         <img
                           className="d-block w-100 carouselImage"
                           src={photo.href}
-                          alt='property photo'
+                          alt='property'
                         />
                       </div>
                     </Carousel.Item> )
@@ -106,9 +99,7 @@ class SinglePropertyPage extends Component {
               </Row>
               <Row className='alignContentLeft'>
                 <Col md={5}>
-                  
-                  <Row className='alignContentLeft'><b>Address:</b> &nbsp; {address}, {county}, NY,  
-                  {zip}</Row>
+                  <Row className='alignContentLeft'><b>Address:</b> &nbsp; {address}, {county}, NY, {zip}</Row>
                   <Row className='alignContentLeft'><b>Monthly: </b> &nbsp; $ &nbsp;{price}</Row>
                   <Row className='alignContentLeft'><b>Rental Type:</b> &nbsp; {prop_type}</Row>
                   <Row className='alignContentLeft'><b>Bedrooms:</b> &nbsp; {beds}</Row>
@@ -116,11 +107,10 @@ class SinglePropertyPage extends Component {
                   <Row className='alignContentLeft'><b>Year Built:</b>&nbsp; {yearBuilt}</Row>
                   <Row className='alignContentLeft'> <b>Broker:</b> &nbsp;{brokerName}</Row>
                   <Row className='alignContentLeft'><b>Contact:</b>&nbsp;{brokerTel}</Row> 
-                  
                 </Col>
                 <Col></Col>
               </Row>
-              <Row style={{marginRight:"20%"}} className='alignContentLeft'><b>Description:</b>&nbsp;{description}</Row>
+              <Row className='alignContentLeft'><b>Description:</b>&nbsp;&nbsp;{description}</Row>
               
               <Row className='alignContentLeft marginBottomMed marginTop'>
                 <Col sm={8}></Col>

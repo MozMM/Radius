@@ -26,7 +26,6 @@ export const fetchProperty = (propertyId) => {
           useQueryString: true,
         }})
         .then((singlePropertyRes) => {
-          // console.log(singlePropertyRes.data.properties[0]);
           dispatch(gotProperty(singlePropertyRes.data.properties[0]))
         })
     } catch (err) {
@@ -36,7 +35,7 @@ export const fetchProperty = (propertyId) => {
 }
 
 //----------- initial state ----------//
-const property = {}
+const property = {};
 
 //---------- reducer ----------//
 

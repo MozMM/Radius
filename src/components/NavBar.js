@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { Nav, Navbar } from "react-bootstrap";
-import firebase, { auth, db } from "../config/firebase";
+import firebase, { auth } from "../config/firebase";
 
 import { gotIsLoggedIn } from '../store/user'
 

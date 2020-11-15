@@ -19,17 +19,15 @@ const Footer = () => {
             </div>
 
             <div className="icon">
-              <h5>Social Media:</h5>
-
               <div>
                 <div>
-                  <a href="https://github.com/">
-                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></img>
+                  <a href="https://github.com/MozMM/Radius">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt='github'></img>
                   </a>
                 </div>
                 <div>
                   <a href="https://www.youtube.com/">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqXsRF7wzd8emX1UX2JGk82CC_4hxxAJ0NAA&usqp=CAU"></img>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqXsRF7wzd8emX1UX2JGk82CC_4hxxAJ0NAA&usqp=CAU" alt='youtube'></img>
                   </a>
                 </div>
 
