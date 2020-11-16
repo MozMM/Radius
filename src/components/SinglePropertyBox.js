@@ -94,7 +94,7 @@ class SinglePropertyBox extends Component {
     return (
       <div>
         { Object.keys(property).length ?
-        <Container>
+        <Container className="boxShadowed">
           <Row><h4>The Basics</h4></Row>
 
             <Row className='imageContainerPropertyInfoBox'>

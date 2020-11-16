@@ -6,21 +6,16 @@ import { Link } from "react-router-dom";
 
 const get = require('lodash.get');
 
-//const altPropertyImage = "https://github.com/2008-GH-Capstone-team-E/radius/blob/main/public/Property_Image_PlaceHolder.png?raw=true"
-
-
 class SinglePropertyPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
 
   async componentDidMount() {
-      if (this.props.singleProperty.property_id !== this.props.match.params.id) {
-      this.props.getSingleProperty(this.props.match.params.id)
-      }
+    if (this.props.singleProperty.property_id !== this.props.match.params.id) {
+    this.props.getSingleProperty(this.props.match.params.id)
+    }
   }
 
   render() {
@@ -110,7 +105,7 @@ class SinglePropertyPage extends Component {
                 </Col>
                 <Col></Col>
               </Row>
-              <Row className='alignContentLeft'><b>Description:</b>&nbsp;&nbsp;{description}</Row>
+              <Row className='alignContentLeft marginRightMed'><b>Description:</b>&nbsp;&nbsp;{description}</Row>
               
               <Row className='alignContentLeft marginBottomMed marginTop'>
                 <Col sm={8}></Col>
@@ -132,8 +127,6 @@ class SinglePropertyPage extends Component {
   }
 }
   
-  
-
 const mapState = state => {
   return {
     singleProperty: state.singleProperty

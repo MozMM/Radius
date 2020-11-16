@@ -87,42 +87,42 @@ class UserFavorites extends Component {
     const properties = this.state.moreInfoOnProperties
 
     function checkPrice(property) {
-      if(property.price){
-       return property.price
-      }else if(property.community!==undefined){
-        return property.community.price_max
-      }else{
-        return "unavaliable"
+      if (property.price) {
+       return property.price;
+      } else if (property.community !== undefined) {
+        return property.community.price_max;
+      } else {
+        return "unavaliable";
       }
     }
 
     function checkBedroom(property) {
-      if(property.price){
-        return property.beds
-      }else if(property.community!==undefined){
-        return property.community.beds_max
-      }else{
-        return "unavaliable"
+      if (property.price) {
+        return property.beds;
+      } else if (property.community !== undefined) {
+        return property.community.beds_max;
+      } else {
+        return "unavaliable";
       }
     }
 
-    if(this.state.checking){
-      return(
-        <div className="holdPageOpen" style={({ margin: "50px" , textAlign: "center" })}>
+    if (this.state.checking) {
+      return (
+        <div className="holdPageOpen centerSelf marginTopMed">
           <h3>Please wait...</h3>
         </div>
       )
-    }else{
-      if(this.state.fav.length){
+    } else {
+      if (this.state.fav.length) {
         //wait to resolve
-        if(this.state.resolvedPromise){
+        if (this.state.resolvedPromise) {
           //show fav property
           return (
             <div>
               <Container fluid className="favsContainer" >
-                <Row>
+                <Row className="favsRow">
                   {properties.map(property => {
-                    return(
+                    return (
                       <Col key={property.property_id}>
                       <Card style={{width: "300px", margin:"20px "}}>
                         <Card.Img variant="top" src={property.photos[0].href} style={{width: 300, height: 300}}/>
@@ -139,50 +139,45 @@ class UserFavorites extends Component {
                           <b>Bedrooms: </b>
                           {checkBedroom(property)}
                           </Card.Text>
-
                           <Row>
                             <Col>
-                            <Link to={`/properties/${property.property_id}`}>
-                            <Button className="buttonSizer" variant="info">More Info</Button>
-                          </Link>
+                              <Link to={`/properties/${property.property_id}`}>
+                                <Button className="buttonSizer" variant="info">
+                                  More Info
+                                </Button>
+                              </Link>
                             </Col>
-
                             <Col>
-                            <Button  className="buttonSizer"
-                          variant="info" size="sm"
-                          onClick={() => {this.handleRemove(property.property_id)}}>
-                          Remove
-                          </Button>
+                              <Button  className="buttonSizer" variant="info" size="sm"
+                                onClick={() => {this.handleRemove(property.property_id)}}>
+                                Remove
+                              </Button>
                             </Col>
                           </Row>
                         </Card.Body>
                       </Card>
                       </Col>
                     )
-                  })
-                  }
+                  })}
                 </Row>
               </Container>
             </div>
               )
-        }else{
-          return(
-            <div className="holdPageOpen" style={({ margin: "50px" , textAlign: "center" })}>
-            <h3> loading your favorite properties</h3>
+        } else {
+          return (
+            <div className="holdPageOpen centerSelf marginTopMed">
+              <h3> loading your favorite properties</h3>
             </div>
-
           )
         }
-      }else{
-        return(
-          <div className="holdPageOpen" style={({ margin: "50px" , textAlign: "center" })}>
-          <h3> No favorites yet ... Please add properties to favorites</h3>
-        </div>
-
+      } else {
+        return (
+          <div className="holdPageOpen centerSelf marginTopMed">
+           <h3> No favorites yet ... Please add properties to favorites</h3>
+          </div>
         )
       }
     }
-    }
-
+  }
 }
 export default UserFavorites
