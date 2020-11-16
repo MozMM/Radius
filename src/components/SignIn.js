@@ -51,7 +51,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <Container style={{ marginTop: "30px" }}>
+        <Container className="boxShadowed">
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -100,4 +100,5 @@ class Login extends Component {
     );
   }
 }
+
 export default Login;

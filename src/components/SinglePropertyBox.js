@@ -9,8 +9,6 @@ import defaultPic from "../css/images/Property_Image_PlaceHolder.png"
 
 const get = require('lodash.get');
 
-//const altPropertyImage = "https://github.com/2008-GH-Capstone-team-E/radius/blob/main/public/Property_Image_PlaceHolder.png?raw=true"
-
 class SinglePropertyBox extends Component {
   constructor(props) {
     super(props);
@@ -67,28 +65,24 @@ class SinglePropertyBox extends Component {
 
 
   render() {
-    //console.log('This is auth() in InfoBox:' , auth())
     let property = this.props.singleProperty || {}
-    // console.log("selectedProperty",property)
-
-
     let price; 
     let bedroom;
-    // console.log("community?",property.community)   
-    if(property.price){
-      price = property.price
-    }else if(property.community!==undefined){
-      price=property.community.price_max
-    }else{
-      price="unavaliable"
+    
+    if (property.price) {
+      price = property.price;
+    } else if (property.community !== undefined) {
+      price = property.community.price_max;
+    } else {
+      price="unavaliable";
     }
 
-    if(property.price){
-      bedroom = property.beds
-    }else if(property.community!==undefined){
-      bedroom=property.community.beds_max
-    }else{
-      bedroom="unavaliable"
+    if (property.price) {
+      bedroom = property.beds;
+    } else if (property.community !== undefined) {
+      bedroom = property.community.beds_max;
+    } else {
+      bedroom = "unavaliable";
     }
       
     const address = get(property, 'address.line', 'unavailable')
@@ -100,11 +94,11 @@ class SinglePropertyBox extends Component {
     return (
       <div>
         { Object.keys(property).length ?
-        <Container>
+        <Container className="boxShadowed">
           <Row><h4>The Basics</h4></Row>
 
             <Row className='imageContainerPropertyInfoBox'>
-              <img src={singlePhoto} alt="property photo" className='imageInInfoBox'/>
+              <img src={singlePhoto} alt="property" className='imageInInfoBox'/>
             </Row>
              <Row className='alignContentLeft'><b>Address:</b> {address}, {county}, NY,
               {zip}</Row>

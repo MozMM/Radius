@@ -21,7 +21,7 @@ import defaultPic from "../css/images/Property_Image_PlaceHolder.png"
 
 const get = require('lodash.get');
 
-const API_KEY =`${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`;
+const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 
 let map;
 let infowindow;
