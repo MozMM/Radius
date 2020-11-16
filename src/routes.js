@@ -15,8 +15,8 @@ class Routes extends Component {
       <Switch>
         <Route exact path="/" component={WelcomePage} />
         <Route exact path="/search" component={Nearby} />
-        <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={SignIn} />
+        <Route exact path="/signup" component={SignUp} />
         <Route exact path="/favorites" component={UserHome} />
         <Route exact path="/properties/:id" component={SinglePropertyPage} />
       </Switch>
