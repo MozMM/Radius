@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Badge } from "react-bootstrap";
 
 import SinglePropertyBox from './SinglePropertyBox'
 import PropertyFilter from "./PropertyFilter"
@@ -28,7 +28,7 @@ let infowindow;
 let service;
 
 
-class Nearby extends Component {
+class SearchMap extends Component {
   constructor(props){
     super(props)
       this.state = {
@@ -578,7 +578,7 @@ class Nearby extends Component {
         
         <Container fluid>
           {this.state.selectedProperty ? 
-          <form>
+            <form>
             <Row>
               <Col sm={7} > 
               <Row className='spaceAround marginLeft'>
@@ -628,7 +628,7 @@ class Nearby extends Component {
               </Col>
               <Col sm={5}></Col>
             </Row>
-          </form> 
+          </form>
           : ""}
             <Row className='mapContainer'>
               <Col md={8}>
@@ -675,4 +675,4 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState,mapDispatch)(Nearby);
+export default connect(mapState,mapDispatch)(SearchMap);
