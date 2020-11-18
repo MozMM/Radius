@@ -34,11 +34,13 @@ export class Header extends Component {
               <div>
                 {this.props.currentUser ?
                     <Nav>
+                      <Nav.Link href="/search">Search</Nav.Link>
                       <Nav.Link href="/favorites">Favorites</Nav.Link>
                       <Nav.Link href="/" onClick={async ()=> await firebase.auth().signOut()}>Sign Out</Nav.Link>
                     </Nav>
                   :
                     <Nav>
+                      <Nav.Link href="/search">Search</Nav.Link>
                       <Nav.Link href="/login">Log In</Nav.Link>
                       <Nav.Link eventKey={2} href="/signup">Sign Up</Nav.Link>
                     </Nav>
