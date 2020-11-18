@@ -106,12 +106,11 @@ class SinglePropertyPage extends Component {
                 <Col></Col>
               </Row>
               <Row className='alignContentLeft marginRightMed'><b>Description:</b>&nbsp;&nbsp;{description}</Row>
-              
               <Row className='alignContentLeft marginBottomMed marginTop'>
                 <Col sm={8}></Col>
                 <Col>
                 <Link to='/search'>
-                  <Button variant="outline-info" size="sm">
+                  <Button variant="info" size="sm">
                   back to search
                   </Button>
                 </Link>

@@ -20,9 +20,6 @@ class PropertyFilter extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
       }
 
-      
-
-
       handleChange(e) {
         this.setState({
           [e.target.name]: e.target.value,
@@ -45,29 +42,32 @@ class PropertyFilter extends Component{
 
         return (
             <Container fluid style={{padding:"20px"}}>
-                <Form onSubmit={this.handleSubmit}>
-                    <Row>   
-                        <Col>
-                            <Form.Group controlId="exampleForm.ControlInput1">
-                                <Form.Control name="minBeds" type="number" placeholder="bedrooms" onChange={this.handleChange}/>
-                            </Form.Group>
-                        </Col>
-                        <Col>
-                            <Form.Group controlId="exampleForm.ControlInput1">
-                                <Form.Control name="maxPrice" type="number" placeholder="max rental price" onChange={this.handleChange}/>
-                            </Form.Group>
-                        </Col>
-                        <Col className='alignContentLeft'>
-                            <Button
-                                variant="info"
-                                type="submit"
-                            >
-                            get properties
-                            </Button>
-                        </Col>
-                        
-                    </Row>
-                </Form>
+              <Form onSubmit={this.handleSubmit}>
+                <Row>   
+                  <Col sm={1}>
+                  </Col>
+                  <Col>
+                    <Form.Group controlId="exampleForm.ControlInput1">
+                      <Form.Control name="minBeds" type="number" 
+                      placeholder="bedrooms" onChange={this.handleChange}/>
+                    </Form.Group>
+                  </Col>
+                  <Col >
+                    <Form.Group controlId="exampleForm.ControlInput1">
+                      <Form.Control name="maxPrice" type="number" 
+                      placeholder="max rental price" onChange={this.handleChange}/>
+                    </Form.Group>
+                  </Col>
+                  <Col >
+                    <Button
+                      variant="info"
+                      type="submit"
+                    >
+                    get properties
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
             </Container>
         )}
 }
@@ -87,4 +87,4 @@ const mapState = state =>{
     }
   }
   
-  export default connect(mapState,mapDispatch)(PropertyFilter);
+  export default connect(mapState, mapDispatch)(PropertyFilter);
